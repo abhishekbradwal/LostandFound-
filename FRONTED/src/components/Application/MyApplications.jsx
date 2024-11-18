@@ -127,11 +127,11 @@ const MyApplications = () => {
   const validateApplication = async (id) => {
     try {
       console.log("working ");
-      const applicationId = prompt("Please enter ItemId");
-      if (!applicationId) return; // Exit if the user cancels or does not provide an ID
+      console.log(id)
+      if (!id) return; // Exit if the user cancels or does not provide an ID
 
-      console.log("Application ID:", applicationId);
-      const validatekey = `validate${applicationId}`;
+      console.log("Application ID:", id);
+      const validatekey = `validate${id}`;
       localStorage.setItem(validatekey,true)
       setvalidateitem((prevState) => ({
         ...prevState,
@@ -148,7 +148,7 @@ const MyApplications = () => {
 
       // Make a PATCH request to update the application
       const response = await axios.put(
-        `http://localhost:4000/api/v1/application/application/${applicationId}`,
+        `http://localhost:4000/api/v1/application/application/${id}`,
         {},
         { withCredentials: true }
       );

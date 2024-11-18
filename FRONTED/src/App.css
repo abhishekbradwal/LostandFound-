@@ -1350,3 +1350,13 @@ nav .hamburger {
     z-index: 11;
   }
 }
+
+.card>.resume img{
+  width:100%
+}
+
+.banner{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

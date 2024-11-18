@@ -13,7 +13,7 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
     );
   }
 
-  const { name, email, description, phone, answer, jobId } = req.body;
+  const { name, email, description, phone, answer, jobId } = req.body;  
 
   const applicantID = {
     user: req.user._id,
