@@ -12,8 +12,6 @@
 
 This project aims to assist college students in finding their lost items easily. Users can register on the website and post details about their lost items. Similarly, those who find items can post details to help locate the owner.
 
-## Demo
-You can access a live demo of the updated application (https://crypto-simulator-project.netlify.app/)
 
 ## Features
 
