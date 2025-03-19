@@ -6,7 +6,14 @@ import bodyParser from "body-parser";
 
 const router = express.Router();
 
-router.use(cors());
+router.use(
+    cors({
+        origin: "*", // Replace "*" with specific domains for security
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
+
 router.use((req, res, next) => {
     // Replace '*' with the appropriate origin(s) or configure it dynamically
     res.setHeader("Access-Control-Allow-Origin", "*");
