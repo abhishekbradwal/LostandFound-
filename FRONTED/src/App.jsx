@@ -18,6 +18,8 @@ import PostItem from "./components/Item/PostItem";
 import NotFound from "./components/NotFound/NotFound";
 import MyJobs from "./components/Item/MyItems";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL
+
 const App = () => {
   console.log("printing this ");
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
@@ -26,7 +28,7 @@ const App = () => {
       const fetchUser = async () => {
         try {
           const response = await axios.get(
-            "http://localhost:4000/api/v1/user/getuser",
+            `${BASE_URL}/api/v1/user/getuser`,
             {
               withCredentials: true,
             }
