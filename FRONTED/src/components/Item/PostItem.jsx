@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
 
-const BASE_URL = import.meta.env.REACT_APP_BASE_URL
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 const PostItem = () => {
   const [title, setTitle] = useState("");

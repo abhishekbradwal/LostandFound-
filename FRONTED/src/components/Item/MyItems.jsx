@@ -6,7 +6,7 @@ import { RxCross2 } from "react-icons/rx";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = import.meta.env.REACT_APP_BASE_URL
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 const MyItems = () => {
   const [myItems, setMyItems] = useState([]);

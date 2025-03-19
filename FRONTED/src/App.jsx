@@ -18,7 +18,7 @@ import PostItem from "./components/Item/PostItem";
 import NotFound from "./components/NotFound/NotFound";
 import MyJobs from "./components/Item/MyItems";
 
-const BASE_URL = import.meta.env.REACT_APP_BASE_URL
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 const App = () => {
   console.log("printing this ");
