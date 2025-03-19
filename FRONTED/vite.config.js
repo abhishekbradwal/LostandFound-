@@ -3,9 +3,12 @@ import react from '@vitejs/plugin-react-swc'
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
+  },
   server: {
-    mimeTypes: {
-      'js': 'application/javascript'
+    headers: {
+      'Content-Type': 'application/javascript'
     }
   }
 })
