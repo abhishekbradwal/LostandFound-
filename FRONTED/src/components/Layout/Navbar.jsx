@@ -5,7 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = import.meta.env.REACT_APP_BASE_URL
 
 const Navbar = () => {
   const [show, setShow] = useState(false);

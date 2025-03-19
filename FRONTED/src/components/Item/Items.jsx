@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../main";
 import { GiCogLock } from "react-icons/gi";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = import.meta.env.REACT_APP_BASE_URL
 
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);

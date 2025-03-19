@@ -8,11 +8,12 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
 
+const BASE_URL = import.meta.env.REACT_APP_BASE_URL
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-  const BASE_URL = process.env.REACT_APP_BASE_URL
   const { isAuthorized, setIsAuthorized } = useContext(Context);
 
   const handleLogin = async (e) => {

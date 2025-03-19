@@ -9,7 +9,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = import.meta.env.REACT_APP_BASE_URL
 
 const Register = () => {
   const [email, setEmail] = useState("");
