@@ -6,6 +6,8 @@ import { RxCross2 } from "react-icons/rx";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
 const MyItems = () => {
   const [myItems, setMyItems] = useState([]);
   const [editingMode, setEditingMode] = useState(null);
@@ -17,7 +19,7 @@ const MyItems = () => {
     const fetchItems = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/job/getmyjobs", //
+          `{BASE_URL}/api/v1/job/getmyjobs`, //
           { withCredentials: true }
         );
         setMyItems(data.myJobs); //cap
@@ -47,7 +49,7 @@ const MyItems = () => {
   const handleUpdateItem = async (ItemId) => {
     const updatedItem = myItems.find((Item) => Item._id === ItemId);
     await axios
-      .put(`http://localhost:4000/api/v1/job/update/${ItemId}`, updatedItem, {
+      .put(`{BASE_URL}/api/v1/job/update/${ItemId}`, updatedItem, {
         withCredentials: true,
       })
       .then((res) => {
@@ -62,7 +64,7 @@ const MyItems = () => {
   //Function For Deleting Item
   const handleDeleteItem = async (ItemId) => {
     await axios
-      .delete(`http://localhost:4000/api/v1/job/delete/${ItemId}`, {
+      .delete(`{BASE_URL}/api/v1/job/delete/${ItemId}`, {
         withCredentials: true,
       })
       .then((res) => {

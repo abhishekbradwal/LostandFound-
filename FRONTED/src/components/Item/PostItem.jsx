@@ -3,6 +3,9 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
 const PostItem = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -33,7 +36,7 @@ const PostItem = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/job/post",
+        `${BASE_URL}/api/v1/job/post`,
         formData,
         {
           withCredentials: true,

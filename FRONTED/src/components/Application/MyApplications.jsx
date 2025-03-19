@@ -26,7 +26,7 @@ const MyApplications = () => {
       try {
         if (user && user.role === "Employer") {
           const response = await axios.get(
-            "http://localhost:4000/api/v1/application/employer/getall",
+            `{BASE_URL}/api/v1/application/employer/getall`,
             {
               withCredentials: true,
             }
@@ -34,7 +34,7 @@ const MyApplications = () => {
           setApplications(response.data.applications);
         } else {
           const response = await axios.get(
-            "http://localhost:4000/api/v1/application/jobseeker/getall",
+            `{BASE_URL}/api/v1/application/jobseeker/getall`,
             {
               withCredentials: true,
             }
@@ -80,7 +80,7 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`http://localhost:4000/api/v1/application/delete/${id}`, {
+        .delete(`{BASE_URL}/api/v1/application/delete/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
@@ -99,7 +99,7 @@ const MyApplications = () => {
       console.log("not validate coming in delete");
       axios
         .delete(
-          `http://localhost:4000/api/v1/application/deleteemployee/${id}`,
+          `{BASE_URL}/api/v1/application/deleteemployee/${id}`,
           {
             withCredentials: true,
           }
@@ -148,7 +148,7 @@ const MyApplications = () => {
 
       // Make a PATCH request to update the application
       const response = await axios.put(
-        `http://localhost:4000/api/v1/application/application/${id}`,
+        `{BASE_URL}/api/v1/application/application/${id}`,
         {},
         { withCredentials: true }
       );
@@ -237,7 +237,7 @@ const JobSeekerCard = ({
 
   axios
     .get(
-      `http://localhost:4000/api/v1/user/getemployee/${element.employerID.user}`,
+      `{BASE_URL}/api/v1/user/getemployee/${element.employerID.user}`,
       {
         withCredentials: true,
       }

@@ -3,6 +3,9 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
 const ItemDetails = () => {
   const { id } = useParams();
   const [items, setitems] = useState({});
@@ -12,7 +15,7 @@ const ItemDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/v1/job/${id}`, {
+      .get(`${BASE_URL}/api/v1/job/${id}`, {
         withCredentials: true,
       })
       .then((res) => {

@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../main";
 import { GiCogLock } from "react-icons/gi";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
 const Jobs = () => {
   const [jobs, setJobs] = useState([]);
   const { isAuthorized } = useContext(Context);
@@ -11,7 +13,7 @@ const Jobs = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:4000/api/v1/job/getall", {
+        .get(`${BASE_URL}/api/v1/job/getall`, {
           withCredentials: true,
         })
         .then((res) => {

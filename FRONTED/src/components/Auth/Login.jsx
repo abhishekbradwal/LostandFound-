@@ -8,18 +8,19 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-
   const { isAuthorized, setIsAuthorized } = useContext(Context);
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        `${BASE_URL}/api/v1/user/login`,
         { email, password, role },
         {
           headers: {
