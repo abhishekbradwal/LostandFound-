@@ -1,3 +1,4 @@
+require("dotenv").config();
 import { User } from "../models/userSchema.js";
 import { catchAsyncErrors } from "./catchAsyncError.js";
 import ErrorHandler from "./error.js";
