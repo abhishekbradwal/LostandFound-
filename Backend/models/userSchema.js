@@ -1,4 +1,5 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from "bcrypt";
