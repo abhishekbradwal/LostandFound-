@@ -1,6 +1,8 @@
 import express from "express";
 import { register,login,logout, getUser, getEmployerdetailsBYID} from "../controllers/userControllers.js"; 
 import {isAuthenticated} from "../middlewares/auth.js"
+import cors from "cors";
+import bodyParser from "body-parser";
 
 const router = express.Router();
 

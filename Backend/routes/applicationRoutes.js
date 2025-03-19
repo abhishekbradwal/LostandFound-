@@ -1,6 +1,8 @@
 import express from "express";
 import {employerGetAllApplications,jobseekerGetAllApplications,jobseekerDeleteApplication, postApplication, jobseekerGetApplicationsBYID, employerDeleteApplication} from "../controllers/applicationControllers.js"
 import { isAuthenticated } from "../middlewares/auth.js";
+import cors from "cors";
+import bodyParser from "body-parser";
 
 const router = express.Router();
 router.use(cors());
